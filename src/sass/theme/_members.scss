@@ -1,0 +1,29 @@
+.members_list {
+    background-color: var(--col-grey-200);
+    padding-block: 3rem;
+    &__grid {
+        display: grid;
+        gap: 1rem;
+    }
+
+    &__card {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(4,1fr);
+        background-color: var(--col-white);
+        padding: 1rem;
+
+        .fa-ul {
+            margin-left: 1.5rem;
+        }
+    }
+ 
+    &__image {
+        object-fit: cover;
+        object-position: center;
+        align-self: center;
+        justify-self: center;
+        max-height: 100px;
+        max-width: 90%;
+    }
+}

@@ -1,0 +1,16 @@
+.member_panel {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    isolation: isolate;
+    color: var(--col-white) !important;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--col-blue-400);
+        opacity: 0.8;
+        z-index: -1;
+    }
+}

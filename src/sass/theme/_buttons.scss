@@ -1,0 +1,36 @@
+.btn {
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    text-transform: uppercase;
+    font-weight: var(--fw-700);
+    letter-spacing: var(--ls-900);
+    transition: color var(--transition), background-color var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--col-red-600);
+    border-color: var(--col-red-600);
+    color: var(--col-white);
+    &:hover {
+        background-color: var(--col-red-400);
+        color: var(--col-white);
+    }
+}
+
+.btn-previous, .btn-next {
+    a {
+        transition: all 300ms ease;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+.btn-previous:hover, .btn-next:hover {
+    a {
+        color: var(--col-red-400);
+    }
+}

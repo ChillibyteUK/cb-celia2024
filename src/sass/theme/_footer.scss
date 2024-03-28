@@ -1,0 +1,33 @@
+footer {
+    background-color: var(--col-grey-900);
+    color: var(--col-white);
+    .footer-links {
+        border-top: 1px solid var(--col-grey-400);
+        border-bottom: 1px solid var(--col-grey-400);
+        padding-block: 1rem;
+        margin-bottom: 2rem;
+        a {
+            color: var(--col-white);
+            &:hover {
+                color: var(--col-blue-400);
+            }
+        }
+    }
+    .footer-form {
+        padding-block: 2rem;
+        border-bottom: 1px solid var(--col-grey-400);
+        margin-bottom: 2rem;
+    }
+    .colophon {
+        font-size: var(--fs-300);
+        color: var(--col-grey-400);
+    }
+   .cb {
+        content: url(../img/cb.png);
+        filter: grayscale(1);
+        transition: opacity 300ms ease;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

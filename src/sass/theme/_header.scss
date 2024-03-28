@@ -1,0 +1,25 @@
+header {
+
+    #wrapper-navbar {
+        transition: top var(--transition);
+    }
+    &.hidden {
+        #wrapper-navbar {
+            top: -91px;
+        }
+    }
+
+   .prenav {
+        background-color: var(--col-grey-900);
+        padding-block: 0.5rem;
+   }
+
+   #navbar {
+    background-color: var(--col-light);
+    a.nav-link {
+        font-family: var(--ff-headings);
+        font-weight: var(--fw-600);
+        font-size: var(--fs-400);
+    }
+   }
+}

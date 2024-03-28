@@ -1,0 +1,19 @@
+.services_list {
+    background-color: var(--col-blue-400);
+    color: var(--col-white);
+    h2 {
+        color: var(--col-white);
+    }
+    &__item {
+        break-inside: avoid;
+    }
+    &__title {
+        p {
+            margin-bottom: 0;
+        }
+    }
+    &__detail {
+        padding-inline-start: 1.3rem;
+        font-size: var(--fs-350);
+    }
+}
