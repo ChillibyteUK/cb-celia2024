@@ -2,7 +2,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 get_header();
-$img = get_the_post_thumbnail_url(get_the_ID(), 'full');
+$img = get_the_post_thumbnail_url(get_the_ID(), 'full') ?? null;
 ?>
 <main id="main" class="blog">
     <?php
@@ -26,8 +26,12 @@ $after;
                 <div class="blog__date mb-2">
                     <?=get_the_date('jS F Y')?>
                 </div>
-                <img src="<?=$img?>" alt="" class="blog__image">
                 <?php
+                if ($img) {
+                    ?>
+                <img src="<?=$img?>" alt="" class="blog__image">
+                    <?php
+                }
     $count = estimate_reading_time_in_minutes(get_the_content(), 200, true, true);
 echo $count;
 
@@ -42,7 +46,6 @@ foreach ($blocks as $block) {
     }
     echo render_block($block);
 }
-cb_post_nav();
 ?>
             </div>
             <div class="col-lg-3 related">
@@ -61,11 +64,8 @@ while ($r->have_posts()) {
                 <a class="related__card d-block mb-3"
                     href="<?=get_the_permalink()?>">
                     <div class="related__image_container">
-                        <img src="<?=get_the_post_thumbnail_url(get_the_ID(), 'large')?>"
-                            alt="" class="related__image">
-                    </div>
                     <div class="related__content">
-                        <h3 class="related__title">
+                        <h3 class="fs-400 fw-600">
                             <?=get_the_title()?></h3>
                     </div>
                 </a>

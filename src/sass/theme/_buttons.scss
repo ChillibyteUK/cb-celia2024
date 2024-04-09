@@ -11,15 +11,15 @@
     transition: color var(--transition), background-color var(--transition);
 }
 
-.btn-primary {
-    background-color: var(--col-red-600);
-    border-color: var(--col-red-600);
-    color: var(--col-white);
-    &:hover {
-        background-color: var(--col-red-400);
-        color: var(--col-white);
-    }
-}
+// .btn-primary {
+//     background-color: var(--col-red-600);
+//     border-color: var(--col-red-600);
+//     color: var(--col-white);
+//     &:hover {
+//         background-color: var(--col-red-400);
+//         color: var(--col-white);
+//     }
+// }
 
 .btn-previous, .btn-next {
     a {

@@ -6,12 +6,20 @@ $page_for_posts = get_option('page_for_posts');
 $bg = get_the_post_thumbnail_url($page_for_posts, 'full');
 
 get_header();
+
+// Sanitize input values
+$category_slug = filter_input(INPUT_POST, 'category', FILTER_UNSAFE_RAW ) ?? null;
+$tag_slug = filter_input(INPUT_POST, 'tag', FILTER_UNSAFE_RAW ) ?? null;
+$date_from = filter_input(INPUT_POST, 'dateFrom', FILTER_UNSAFE_RAW ) ?? null;
+$date_to = filter_input(INPUT_POST, 'dateTo', FILTER_UNSAFE_RAW ) ?? null;
+
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
 <main id="main">
     <section class="hero" style="background-image:url(<?=$bg?>)">
         <div class="overlay"></div>
         <div class="container-xl my-auto">
-            <h1>News</h1>
+            <h1 class="text-white">News</h1>
         </div>
     </section>
 
@@ -21,30 +29,138 @@ get_header();
             echo '<div class="mb-5">' . get_the_content(null, false, $page_for_posts) . '</div>';
         }
 
+//  filters here
 ?>
-        <div class="news_index related mb-5">
-            <?php
-    while (have_posts()) {
-        the_post();
-        $img = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: get_stylesheet_directory_uri() . '/img/missing-image.png';
-        $the_date = get_the_date('jS F, Y');
+<form action method="post" class="mb-5">
+    <div class="row g-2">
+        <div class="col-md-3">
+            <select name="category" class="form-select">
+                <option value="">All Categories</option>
+<?php
 
+//  category
+$cats = get_categories();
+foreach ($cats as $c) {
+    $selected = ($category_slug === $c->slug) ? 'selected' : '';
+    echo "<option value=\"{$c->slug}\" {$selected}>{$c->name}</option>";
+}
+?>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select name="tag" class="form-select">
+                <option value="">All Countries</option>
+<?php
+// country
+$tags = get_terms( array(
+    'taxonomy' => 'post_tag',
+    'orderby' => 'name',
+    'order' => 'ASC',
+    'hide_empty' => false, // Set to true if you only want tags assigned to posts
+) );
+foreach ($tags as $t) {
+    $selected = ($tag_slug === $t->slug) ? 'selected' : '';
+    echo "<option value=\"{$t->slug}\" {$selected}>{$t->name}</option>";
+}
+?>
+            </select>
+        </div>
+        <div class="col-6 col-md-2">
+<?php
+// date from
+$oldest_post_query = new WP_Query( array(
+    'posts_per_page' => 1, // We only need the oldest post
+    'order'          => 'ASC', // Order by post date ascending
+    'orderby'        => 'date', // Order by the date
+    'post_status'    => 'publish', // Only look for published posts
+    'post_type'      => 'post', // Only fetch blog posts (not pages or custom post types)
+) );
+$min = 'dd-mm-yyyy';
+while ( $oldest_post_query->have_posts() ) {
+    $oldest_post_query->the_post(); // Set up post data
+    $min = get_the_date('Y-m-d',get_the_ID());
+}
+$value_date_from = $date_from ?? $min; // Use submitted dateFrom or the minimum date
+echo "<input type='date' name='dateFrom' value='{$value_date_from}' class='form-control'>";
+?>
+        </div>
+        <div class="col-6 col-md-2">
+<?php
+// date to
+$max = date('Y-m-d');
+$value_date_to = $date_to ?? $max; // Use submitted dateTo or today's date
+echo "<input type='date' name='dateTo' value='{$value_date_to}' class='form-control'>";
+?>
+        </div>
+        <div class="col-md-2 d-flex gap-2">
+            <input type="submit" value="Search" class="btn btn-primary">
+            <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+        </div>
+    </div>
+</form>
+<?php
+
+echo '<div class=" mb-5">';
+
+    
+// Setup the query arguments
+$args = array(
+    'post_type' => 'post', // or 'any' if you want to include custom post types
+    'post_status' => 'publish',
+    'category_name' => $category_slug, // Use category slug
+    'tag' => $tag_slug, // Use tag slug
+    'date_query' => array(
+        array(
+            'after' => $date_from,
+            'before' => $date_to,
+            'inclusive' => true,
+        ),
+    ),
+    'posts_per_page' => -1, // -1 means all matching posts
+);
+    
+// Create a new WP_Query instance
+$query = new WP_Query($args);
+
+// Check if the query returns any posts
+if ($query->have_posts()) {
+    while ($query->have_posts()) {
+        $query->the_post();
+        $the_date = get_the_date('jS F, Y');
+        $countries = get_the_tags();
+        if (is_array($countries) && !empty($countries)) {
+            $cc = get_field('country_code', $countries[0]);
+        } else {
+            $cc = null; // Or any default value you'd like to use
+        }
         ?>
-            <a href="<?=get_the_permalink(get_the_ID())?>"
-                class="related__card">
-                <div class="related__image_container">
-                    <img class="related__image" src="<?=$img?>">
-                </div>
-                <div class="related__content">
-                    <h3 class="related__title mb-0">
-                        <?=get_the_title()?>
-                    </h3>
-                    <div class="related__date mt-2"><?=$the_date?>
-                    </div>
-                </div>
+        <div class="news_row mb-4">
+            <a href="<?=get_the_permalink()?>">
+                <h3 class="h5 mb-2">
+                    <?=get_the_title()?>
+                </h3>
+                <div class="news__excerpt mb-2"><?=wp_trim_words(get_the_content(),40)?></div>
             </a>
-            <?php
+            <div class="news__meta d-flex align-items-center fs-300">
+                <div>Posted on <?=$the_date?></div>
+                <?php
+                if ($cc) {
+                    ?>
+                    <div>, in <a href="<?=get_term_link($countries[0]->term_id)?>"><?=$countries[0]->name?>&nbsp; <span class="fi fi-<?=$cc?>"></span></a></div>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+        <hr>
+        <?php
     }
+} else {
+    echo 'No posts found.';
+}
+
+// Reset post data
+wp_reset_postdata();
 ?>
         </div>
         <?php
@@ -53,6 +169,20 @@ get_header();
     </div>
     </div>
 </main>
+
+<script>
+function resetForm() {
+    // Reset the category and tag select boxes to their default state
+    document.querySelector('[name="category"]').selectedIndex = 0;
+    document.querySelector('[name="tag"]').selectedIndex = 0;
+
+    // Set the 'dateFrom' and 'dateTo' inputs to specific default values
+    document.querySelector('[name="dateFrom"]').value = '<?=$min?>';
+    document.querySelector('[name="dateTo"]').value = '<?php echo date('Y-m-d'); ?>';
+    
+    // Add any other fields you wish to reset here
+}
+</script>
 <?php
 
 get_footer();
