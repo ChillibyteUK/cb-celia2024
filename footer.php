@@ -13,6 +13,8 @@ defined('ABSPATH') || exit;
         </div>
         <a id="contact-us" class="anchor"></a>
         <div class="footer-form">
+            <div class="h1 text-white">Get in touch</div>
+            <div class="fs-500">Contact us today and we will get back to you as soon as possible</div>
             <?=do_shortcode('[gravityform id="1" title="false"]')?>
         </div>
         <div class="row">
