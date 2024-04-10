@@ -167,20 +167,60 @@ function cb_dashboard_widget_display()
 <?php
 }
 
+// add_filter('template_include', function ($template) {
+//     if (is_archive()) { // Check if it's any type of archive (tag, category, date, custom post type)
+//         $index_template = locate_template('index.php');
+//         if (!empty($index_template)) {
+//             return $index_template;
+//         }
+//     }
+//     return $template; // Return the default template for other cases
+// });
+
+// add_action('template_redirect', function() {
+//     if (is_category() || is_tag()) {
+//         // Build the URL to redirect to
+//         $base_url = home_url('/news/'); // Redirect to the homepage or another base URL of your choice
+//         $query_args = [];
+
+//         if (is_category()) {
+//             $cat = get_queried_object();
+//             $query_args['category_redirect'] = $cat->slug; // Custom query var
+//         }
+
+//         if (is_tag()) {
+//             $tag = get_queried_object();
+//             $query_args['tag_redirect'] = $tag->slug; // Custom query var
+//         }
+
+//         $redirect_url = add_query_arg($query_args, $base_url);
+//         wp_redirect($redirect_url);
+//         exit;
+//     }
+// });
 
 add_filter(
     'wpseo_breadcrumb_links',
     function ($links) {
         global $post;
-        // if ( is_singular( 'post' ) ) {
-        //     $t = get_the_category($post->ID);
-        //     $breadcrumb[] = array(
-        //         'url' => '/guides/',
-        //         'text' => 'Guides',
-        //     );
+        if ( is_tax( 'location' ) ) {
+            // $t = get_the_category($post->ID);
+            $breadcrumb[] = array(
+                'url' => '/location/',
+                'text' => 'Locations',
+            );
 
-        //     array_splice( $links, 1, -2, $breadcrumb );
-        // }
+            array_splice( $links, 1, -2, $breadcrumb );
+        }
+        if ( is_singular( 'member' ) ) {
+            // $t = get_the_category($post->ID);
+            $breadcrumb[] = array(
+                'url' => '/member/',
+                'text' => 'Members',
+            );
+
+            array_splice( $links, 1, -2, $breadcrumb );
+        }
         return $links;
     }
 );

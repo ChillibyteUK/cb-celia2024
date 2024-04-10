@@ -19,10 +19,19 @@ defined('ABSPATH') || exit;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="preload"
-        href="<?=get_stylesheet_directory_uri()?>/fonts/roboto-v30-latin-300.woff2"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/poppins-v20-latin-300.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload"
-        href="<?=get_stylesheet_directory_uri()?>/fonts/roboto-v30-latin-regular.woff2"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/poppins-v20-latin-500.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/poppins-v20-latin-600.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/source-sans-3-v15-latin-600.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/source-sans-3-v15-latin-regular.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <?php
     if (is_front_page()) {

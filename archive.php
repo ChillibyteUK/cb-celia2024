@@ -13,6 +13,20 @@ $tag_slug = filter_input(INPUT_POST, 'tag', FILTER_UNSAFE_RAW ) ?? null;
 $date_from = filter_input(INPUT_POST, 'dateFrom', FILTER_UNSAFE_RAW ) ?? null;
 $date_to = filter_input(INPUT_POST, 'dateTo', FILTER_UNSAFE_RAW ) ?? null;
 
+$obj = get_queried_object();
+
+$theTerm = '';
+
+if ($obj->taxonomy == 'category') {
+    $category_slug = $obj->slug;
+    // $theTerm = $obj->name;
+}
+elseif ($obj->taxonomy == 'post_tag') {
+    $tag_slug = $obj->slug;
+    // $theTerm = $obj->name;
+}
+
+
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
 <main id="main">
@@ -25,7 +39,6 @@ $date_to = filter_input(INPUT_POST, 'dateTo', FILTER_UNSAFE_RAW ) ?? null;
 
     <div class="container-xl py-5">
         <?php
-
         if (get_the_content(null, false, $page_for_posts)) {
             echo '<div class="mb-5">' . get_the_content(null, false, $page_for_posts) . '</div>';
         }
@@ -137,7 +150,7 @@ if ($query->have_posts()) {
                 <h3 class="h5 mb-2">
                     <?=get_the_title()?>
                 </h3>
-                <div class="news__excerpt text-grey-900 mb-2"><?=wp_trim_words(get_the_content(),40)?></div>
+                <div class="news__excerpt mb-2 text-grey-900"><?=wp_trim_words(get_the_content(),40)?></div>
             </a>
             <div class="news__meta d-flex align-items-center fs-300">
                 <div>Posted on <?=$the_date?></div>
@@ -180,6 +193,20 @@ wp_reset_postdata();
     </div>
     </div>
 </main>
+
+<script>
+function resetForm() {
+    // Reset the category and tag select boxes to their default state
+    document.querySelector('[name="category"]').selectedIndex = 0;
+    document.querySelector('[name="tag"]').selectedIndex = 0;
+
+    // Set the 'dateFrom' and 'dateTo' inputs to specific default values
+    document.querySelector('[name="dateFrom"]').value = '<?=$min?>';
+    document.querySelector('[name="dateTo"]').value = '<?php echo date('Y-m-d'); ?>';
+    
+    // Add any other fields you wish to reset here
+}
+</script>
 <?php
 
 get_footer();

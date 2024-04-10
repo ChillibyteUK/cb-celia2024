@@ -4,6 +4,7 @@ defined('ABSPATH') || exit;
 get_header();
 $img = get_the_post_thumbnail_url(get_the_ID(), 'full') ?? null;
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
 <main id="main" class="blog">
     <?php
     $content = get_the_content();
@@ -17,16 +18,40 @@ $after;
     if (function_exists('yoast_breadcrumb')) {
         yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
     }
+    $the_date = get_the_date('jS F, Y');
+    $countries = get_the_tags();
+    $cats = get_the_category();
+
 ?>
         </section>
         <div class="row g-4 pb-4">
             <div class="col-lg-9 blog__content">
-                <h1 class="blog__title text-blue-400">
+                <h1 class="blog__title text-blue-900 mb-3">
                     <?=get_the_title()?></h1>
-                <div class="blog__date mb-2">
-                    <?=get_the_date('jS F Y')?>
-                </div>
+                    <div class="news__meta d-flex align-items-center fs-300 mb-2">
+                <div>Posted on <?=$the_date?></div>
                 <?php
+                if (is_array($countries) && !empty($countries)) {
+                    foreach ($countries as $cc) {
+                        $ccode = get_field('country_code', $cc);
+                    ?>
+                    <div>, in <a href="<?=get_term_link($cc->term_id)?>"><?=$cc->name?>&nbsp; <span class="fi fi-<?=$ccode?>"></span></a></div>
+                    <?php
+                    }
+                }
+                ?>
+                &nbsp;|&nbsp;<div><?php
+                $catlinks = array();
+                foreach ($cats as $c) {
+                    $link = get_term_link($c->term_id);
+                    $catlinks[] = "<a href=\"{$link}\">{$c->cat_name}</a>";
+                }
+                echo implode(', ', $catlinks);
+echo '.';
+                ?>
+                </div>
+            </div>
+            <?php
                 if ($img) {
                     ?>
                 <img src="<?=$img?>" alt="" class="blog__image">
@@ -63,12 +88,11 @@ while ($r->have_posts()) {
     ?>
                 <a class="related__card d-block mb-3"
                     href="<?=get_the_permalink()?>">
-                    <div class="related__image_container">
-                    <div class="related__content">
-                        <h3 class="fs-400 fw-600">
-                            <?=get_the_title()?></h3>
-                    </div>
+                    <div class="fs-300 text-blue-400"><?=get_the_date('jS F, Y')?></div>
+                    <h3 class="fs-400 fw-600">
+                        <?=get_the_title()?></h3>
                 </a>
+                <hr>
                 <?php
 }
 ?>

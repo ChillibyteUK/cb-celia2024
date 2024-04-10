@@ -110,6 +110,15 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false, 'anchor' => true),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_all_members',
+            'title'				=> __('CB All Members'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_all_members.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false, 'anchor' => true),
+        ));
     }
 }
 add_action('acf/init', 'acf_blocks');

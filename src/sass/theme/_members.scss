@@ -7,14 +7,20 @@
     }
 
     &__card {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(4,1fr);
         background-color: var(--col-white);
         padding: 1rem;
-
-        .fa-ul {
-            margin-left: 1.5rem;
+        &_grid {
+            display: grid;
+            gap: 1rem;
+            @media (min-width:568px) {
+                grid-template-columns: repeat(2,1fr);
+            }
+            @media (min-width:992px) {
+                grid-template-columns: repeat(4,1fr);
+            }
+            .fa-ul {
+                margin-left: 1.5rem;
+            }
         }
     }
  
@@ -25,5 +31,16 @@
         justify-self: center;
         max-height: 100px;
         max-width: 90%;
+    }
+}
+
+.all_members {
+    background-color: white;
+}
+.left-line {
+    border-bottom: 1px solid var(--col-grey-200);
+    @media (min-width:992px) {
+        border-bottom: none;
+        border-left: 1px solid var(--col-grey-200);
     }
 }

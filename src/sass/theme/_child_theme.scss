@@ -30,9 +30,9 @@ a {
 }
 
 main a:not([class]) {
-    color: var(--col-red-600);
+    color: var(--col-blue-400);
     &:hover {
-        color: var(--col-red-400);
+        color: var(--col-blue-900);
     }
 }
 

@@ -10,7 +10,8 @@
   --hsl-blue-400: 216 59% 42%;
   --col-blue-400: hsl( var(--hsl-blue-400) );
   --col-blue-200: #5b9ada;
-  --col-green-400: #00e2c5;
+  --col-green-400: hsl(172, 100%, 44%);
+  --col-green-900: hsl(172, 100%, 33%);
   --ff-body: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --ff-headings: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --fw-300: 300;
@@ -21175,6 +21176,20 @@ strong {
   font-size: var(--fs-300);
 }
 
+.half-line {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.half-line::after {
+  content: "";
+  position: absolute;
+  width: 6rem;
+  border-bottom: 1px solid var(--col-blue-900);
+  bottom: 0;
+  left: 0;
+}
+
 .bg-black {
   background-color: var(--col-black);
   color: var(--col-white);
@@ -21195,6 +21210,10 @@ strong {
   color: var(--col-white);
 }
 
+.text-grey-900 {
+  color: var(--col-grey-900) !important;
+}
+
 .bg-blue-900 {
   background-color: var(--col-blue-900);
   color: var(--col-white);
@@ -21207,6 +21226,10 @@ strong {
 .bg-blue-400 {
   background-color: var(--col-blue-400);
   color: var(--col-white);
+}
+
+.text-blue-400 {
+  color: var(--col-blue-400);
 }
 
 .bg-blue-200 {
@@ -21234,6 +21257,16 @@ strong {
   font-weight: var(--fw-700);
   letter-spacing: var(--ls-900);
   transition: color var(--transition), background-color var(--transition);
+}
+
+.btn-green {
+  background-color: var(--col-green-400);
+  color: white;
+  border-color: var(--col-green-400);
+}
+.btn-green:hover {
+  background-color: var(--col-green-900);
+  color: var(--col-black);
 }
 
 .btn-previous a, .btn-next a {
@@ -21419,13 +21452,24 @@ footer .cb:hover {
   gap: 1rem;
 }
 .members_list__card {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
   background-color: var(--col-white);
   padding: 1rem;
 }
-.members_list__card .fa-ul {
+.members_list__card_grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 568px) {
+  .members_list__card_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .members_list__card_grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.members_list__card_grid .fa-ul {
   margin-left: 1.5rem;
 }
 .members_list__image {
@@ -21437,6 +21481,20 @@ footer .cb:hover {
   justify-self: center;
   max-height: 100px;
   max-width: 90%;
+}
+
+.all_members {
+  background-color: white;
+}
+
+.left-line {
+  border-bottom: 1px solid var(--col-grey-200);
+}
+@media (min-width: 992px) {
+  .left-line {
+    border-bottom: none;
+    border-left: 1px solid var(--col-grey-200);
+  }
 }
 
 .hero {
@@ -21534,7 +21592,7 @@ footer .cb:hover {
   content: "";
   position: absolute;
   width: 6rem;
-  border-bottom: 2px solid var(--col-blue-900);
+  border-bottom: 1px solid var(--col-blue-900);
   bottom: 0;
   left: 0;
 }
@@ -21648,10 +21706,10 @@ a {
 }
 
 main a:not([class]) {
-  color: var(--col-red-600);
+  color: var(--col-blue-400);
 }
 main a:not([class]):hover {
-  color: var(--col-red-400);
+  color: var(--col-blue-900);
 }
 
 a.noline {

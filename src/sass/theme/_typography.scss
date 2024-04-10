@@ -89,3 +89,17 @@ strong {
 .fs-300 {
     font-size: var(--fs-300);
 }
+
+.half-line {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 6rem;
+        border-bottom: 1px solid var(--col-blue-900);
+        bottom: 0;
+        left: 0;
+    }
+}
