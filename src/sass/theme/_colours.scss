@@ -42,3 +42,7 @@
 .text-green-400 {
     color: var(--col-green-400);
 }
+
+.text-white.half-line::after {
+    border-color: white;
+}

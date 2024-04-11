@@ -119,6 +119,69 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false, 'anchor' => true),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_brochures',
+            'title'				=> __('CB Brochures'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_brochures.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false, 'anchor' => true),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_hub_cards',
+            'title'				=> __('CB Hub Cards'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_hub_cards.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false, 'anchor' => true),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_flags',
+            'title'				=> __('CB Flag Block'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_flags.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false, 'anchor' => true),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_text_hs',
+            'title'				=> __('CB Text / HS Form'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_text_hs.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false, 'anchor' => true),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_title_content',
+            'title'				=> __('CB Title / Content'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_title_content.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false, 'anchor' => true),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_useful_links',
+            'title'				=> __('CB Useful Links'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_useful_links.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false, 'anchor' => true),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_links_index',
+            'title'				=> __('CB Links Index'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_links_index.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false, 'anchor' => true),
+        ));
     }
 }
 add_action('acf/init', 'acf_blocks');

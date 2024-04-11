@@ -28,6 +28,7 @@
   --fs-900: 40px;
   --lh-normal: 1.5;
   --lh-700: 1.3;
+  --lh-800: 1.2;
   --lh-900: 1.1;
   --ls-900: 0.02em;
   --h-top-mobile: 75px;
@@ -21163,6 +21164,10 @@ strong {
   max-width: 65ch;
 }
 
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
 .fs-400 {
   font-size: var(--fs-400);
 }
@@ -21246,6 +21251,10 @@ strong {
   color: var(--col-green-400);
 }
 
+.text-white.half-line::after {
+  border-color: white;
+}
+
 .btn {
   text-decoration: none;
   border-radius: 5px;
@@ -21261,12 +21270,32 @@ strong {
 
 .btn-green {
   background-color: var(--col-green-400);
-  color: white;
+  color: var(--col-white);
   border-color: var(--col-green-400);
 }
 .btn-green:hover {
   background-color: var(--col-green-900);
   color: var(--col-black);
+}
+
+.btn-blue {
+  background-color: var(--col-blue-400);
+  color: var(--col-white);
+  border-color: var(--col-blue-400);
+}
+.btn-blue:hover {
+  background-color: var(--col-blue-900);
+  color: var(--col-white);
+}
+
+.btn-black {
+  background-color: var(--col-black);
+  color: var(--col-white);
+  border-color: var(--col-black);
+}
+.btn-black:hover {
+  background-color: var(--col-grey-900);
+  color: var(--col-grey-200);
 }
 
 .btn-previous a, .btn-next a {
@@ -21681,6 +21710,64 @@ footer .cb:hover {
   -webkit-padding-start: 1.3rem;
   padding-inline-start: 1.3rem;
   font-size: var(--fs-350);
+}
+
+.brochures {
+  background-color: var(--col-grey-200);
+}
+.brochures__thumb {
+  aspect-ratio: 1/1.414;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transform: rotate(-10deg);
+  max-width: 140px;
+}
+
+.hub_cards__grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 992px) {
+  .hub_cards__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.hub_cards__card {
+  padding: 1rem;
+  display: grid;
+}
+.hub_cards__card img {
+  width: 100%;
+  height: 260px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  margin-bottom: 1rem;
+}
+@media (min-width: 992px) {
+  .hub_cards .span-2 {
+    gap: 1rem;
+    grid-column: span 2;
+    grid-template-columns: 1fr 3fr;
+  }
+  .hub_cards .span-2 img {
+    height: 100%;
+    margin-bottom: 0;
+  }
+}
+.hub_cards ul {
+  padding-left: 1rem;
+}
+.hub_cards ul li {
+  margin-bottom: 0.5rem;
+}
+
+.flag_block .fis {
+  border-radius: 100vw;
+  border: 1px solid var(--col-grey-200);
+  aspect-ratio: 1;
+  width: 40px !important;
 }
 
 body {

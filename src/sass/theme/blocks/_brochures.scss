@@ -1,0 +1,9 @@
+.brochures {
+    background-color: var(--col-grey-200);
+    &__thumb {
+        aspect-ratio: 1 / 1.414;
+        object-fit: cover;
+        transform: rotate(-10deg);
+        max-width: 140px;
+    }
+}
