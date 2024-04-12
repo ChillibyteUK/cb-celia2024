@@ -21630,6 +21630,11 @@ header #navbar a.nav-link {
   font-weight: var(--fw-600);
   font-size: var(--fs-400);
 }
+header .dropdown-menu {
+  border-radius: 0;
+  border: 0;
+  background-color: var(--col-light);
+}
 
 footer {
   background-color: var(--col-grey-900);

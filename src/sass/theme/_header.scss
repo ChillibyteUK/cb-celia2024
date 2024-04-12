@@ -22,4 +22,10 @@ header {
         font-size: var(--fs-400);
     }
    }
+
+   .dropdown-menu {
+    border-radius: 0;
+    border: 0;
+    background-color: var(--col-light);
+   }
 }
