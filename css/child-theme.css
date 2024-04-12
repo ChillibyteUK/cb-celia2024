@@ -21601,6 +21601,26 @@ strong {
   color: var(--col-grey-200);
 }
 
+.btn-search {
+  color: var(--col-white);
+  border-color: var(--col-grey-900);
+  background-color: var(--col-grey-900);
+  height: 39px;
+  line-height: 1;
+}
+.btn-search:hover {
+  background-color: var(--col-green-400);
+  color: var(--col-grey-900);
+}
+
+.btn-reset {
+  height: 39px;
+  line-height: 1;
+  border-color: var(--col-grey-900);
+  background-color: transparent;
+  color: var(--col-grey-900);
+}
+
 .btn-previous a, .btn-next a {
   transition: all 300ms ease;
 }
@@ -21639,6 +21659,9 @@ header .dropdown-menu {
 footer {
   background-color: var(--col-grey-900);
   color: var(--col-white);
+}
+footer a {
+  color: var(--col-green-400);
 }
 footer .footer-links {
   border-top: 1px solid var(--col-grey-400);

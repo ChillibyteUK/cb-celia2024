@@ -8,10 +8,10 @@ $bg = get_the_post_thumbnail_url($page_for_posts, 'full');
 get_header();
 
 // Sanitize input values
-$category_slug = filter_input(INPUT_POST, 'category', FILTER_UNSAFE_RAW ) ?? null;
-$tag_slug = filter_input(INPUT_POST, 'tag', FILTER_UNSAFE_RAW ) ?? null;
-$date_from = filter_input(INPUT_POST, 'dateFrom', FILTER_UNSAFE_RAW ) ?? null;
-$date_to = filter_input(INPUT_POST, 'dateTo', FILTER_UNSAFE_RAW ) ?? null;
+$category_slug = filter_input(INPUT_POST, 'category', FILTER_UNSAFE_RAW) ?? null;
+$tag_slug = filter_input(INPUT_POST, 'tag', FILTER_UNSAFE_RAW) ?? null;
+$date_from = filter_input(INPUT_POST, 'dateFrom', FILTER_UNSAFE_RAW) ?? null;
+$date_to = filter_input(INPUT_POST, 'dateTo', FILTER_UNSAFE_RAW) ?? null;
 
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
@@ -32,12 +32,13 @@ $date_to = filter_input(INPUT_POST, 'dateTo', FILTER_UNSAFE_RAW ) ?? null;
 
 //  filters here
 ?>
-<form action="<?=home_url('/news/')?>" method="post" class="mb-4">
-    <div class="row g-2">
-        <div class="col-md-3">
-            <select name="category" class="form-select">
-                <option value="">All Categories</option>
-<?php
+        <form action="<?=home_url('/news/')?>"
+            method="post" class="mb-4">
+            <div class="row g-2">
+                <div class="col-md-3">
+                    <select name="category" class="form-select">
+                        <option value="">All Categories</option>
+                        <?php
 
 //  category
 $cats = get_categories();
@@ -46,64 +47,64 @@ foreach ($cats as $c) {
     echo "<option value=\"{$c->slug}\" {$selected}>{$c->name}</option>";
 }
 ?>
-            </select>
-        </div>
-        <div class="col-md-3">
-            <select name="tag" class="form-select">
-                <option value="">All Countries</option>
-<?php
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select name="tag" class="form-select">
+                        <option value="">All Countries</option>
+                        <?php
 // country
-$tags = get_terms( array(
+$tags = get_terms(array(
     'taxonomy' => 'post_tag',
     'orderby' => 'name',
     'order' => 'ASC',
     'hide_empty' => false, // Set to true if you only want tags assigned to posts
-) );
+));
 foreach ($tags as $t) {
     $selected = ($tag_slug === $t->slug) ? 'selected' : '';
     echo "<option value=\"{$t->slug}\" {$selected}>{$t->name}</option>";
 }
 ?>
-            </select>
-        </div>
-        <div class="col-6 col-md-2">
-<?php
+                    </select>
+                </div>
+                <div class="col-6 col-md-2">
+                    <?php
 // date from
-$oldest_post_query = new WP_Query( array(
+$oldest_post_query = new WP_Query(array(
     'posts_per_page' => 1, // We only need the oldest post
     'order'          => 'ASC', // Order by post date ascending
     'orderby'        => 'date', // Order by the date
     'post_status'    => 'publish', // Only look for published posts
     'post_type'      => 'post', // Only fetch blog posts (not pages or custom post types)
-) );
+));
 $min = 'dd-mm-yyyy';
-while ( $oldest_post_query->have_posts() ) {
+while ($oldest_post_query->have_posts()) {
     $oldest_post_query->the_post(); // Set up post data
-    $min = get_the_date('Y-m-d',get_the_ID());
+    $min = get_the_date('Y-m-d', get_the_ID());
 }
 $value_date_from = $date_from ?? $min; // Use submitted dateFrom or the minimum date
 echo "<input type='date' name='dateFrom' value='{$value_date_from}' class='form-control'>";
 ?>
-        </div>
-        <div class="col-6 col-md-2">
-<?php
+                </div>
+                <div class="col-6 col-md-2">
+                    <?php
 // date to
 $max = date('Y-m-d');
 $value_date_to = $date_to ?? $max; // Use submitted dateTo or today's date
 echo "<input type='date' name='dateTo' value='{$value_date_to}' class='form-control'>";
 ?>
-        </div>
-        <div class="col-md-2 d-flex gap-2">
-            <input type="submit" value="Search" class="btn btn-primary">
-            <a class="btn btn-secondary" href="/news/">Reset</a>
-        </div>
-    </div>
-</form>
-<?php
+                </div>
+                <div class="col-md-2 d-flex gap-2">
+                    <input type="submit" value="Search" class="btn btn-search">
+                    <a class="btn btn-reset " href="/news/">Reset</a>
+                </div>
+            </div>
+        </form>
+        <?php
 
 echo '<div class=" mb-5">';
 
-    
+
 // Setup the query arguments
 $args = array(
     'post_type' => 'post', // or 'any' if you want to include custom post types
@@ -119,7 +120,7 @@ $args = array(
     ),
     'posts_per_page' => -1, // -1 means all matching posts
 );
-    
+
 // Create a new WP_Query instance
 $query = new WP_Query($args);
 
@@ -137,7 +138,9 @@ if ($query->have_posts()) {
                 <h3 class="h5 mb-2">
                     <?=get_the_title()?>
                 </h3>
-                <div class="news__excerpt text-grey-900 mb-2"><?=wp_trim_words(get_the_content(),40)?></div>
+                <div class="news__excerpt text-grey-900 mb-2">
+                    <?=wp_trim_words(get_the_content(), 40)?>
+                </div>
             </a>
             <div class="news__meta d-flex align-items-center fs-300">
                 <div>Posted on <?=$the_date?></div>
@@ -145,21 +148,24 @@ if ($query->have_posts()) {
                 if (is_array($countries) && !empty($countries)) {
                     foreach ($countries as $cc) {
                         $ccode = get_field('country_code', $cc);
-                    ?>
-                    <div>, in <a href="<?=get_term_link($cc->term_id)?>"><?=$cc->name?>&nbsp; <span class="fi fi-<?=$ccode?>"></span></a></div>
-                    <?php
+                        ?>
+                <div>, in <a
+                        href="<?=get_term_link($cc->term_id)?>"><?=$cc->name?>&nbsp;
+                        <span class="fi fi-<?=$ccode?>"></span></a>
+                </div>
+                <?php
                     }
                 }
-                ?>
+        ?>
                 &nbsp;|&nbsp;<div><?php
-                $catlinks = array();
-                foreach ($cats as $c) {
-                    $link = get_term_link($c->term_id);
-                    $catlinks[] = "<a href=\"{$link}\">{$c->cat_name}</a>";
-                }
-                echo implode(', ', $catlinks);
-echo '.';
-                ?>
+        $catlinks = array();
+        foreach ($cats as $c) {
+            $link = get_term_link($c->term_id);
+            $catlinks[] = "<a href=\"{$link}\">{$c->cat_name}</a>";
+        }
+        echo implode(', ', $catlinks);
+        echo '.';
+        ?>
                 </div>
             </div>
         </div>
@@ -173,8 +179,8 @@ echo '.';
 // Reset post data
 wp_reset_postdata();
 ?>
-        </div>
-        <?php
+    </div>
+    <?php
         // numeric_posts_nav();
 ?>
     </div>

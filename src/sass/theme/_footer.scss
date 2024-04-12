@@ -1,6 +1,9 @@
 footer {
     background-color: var(--col-grey-900);
     color: var(--col-white);
+    a {
+        color: var(--col-green-400);
+    }
     .footer-links {
         border-top: 1px solid var(--col-grey-400);
         border-bottom: 1px solid var(--col-grey-400);
