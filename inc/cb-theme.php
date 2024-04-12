@@ -203,23 +203,23 @@ add_filter(
     'wpseo_breadcrumb_links',
     function ($links) {
         global $post;
-        if ( is_tax( 'location' ) ) {
+        if (is_tax('location')) {
             // $t = get_the_category($post->ID);
             $breadcrumb[] = array(
                 'url' => '/location/',
                 'text' => 'Locations',
             );
 
-            array_splice( $links, 1, -2, $breadcrumb );
+            array_splice($links, 1, -2, $breadcrumb);
         }
-        if ( is_singular( 'member' ) ) {
+        if (is_singular('member')) {
             // $t = get_the_category($post->ID);
             $breadcrumb[] = array(
                 'url' => '/member/',
                 'text' => 'Members',
             );
 
-            array_splice( $links, 1, -2, $breadcrumb );
+            array_splice($links, 1, -2, $breadcrumb);
         }
         return $links;
     }
@@ -276,10 +276,11 @@ function cb_theme_enqueue()
     wp_enqueue_style('slick-styles', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css', array(), true);
     wp_enqueue_style('slick-theme-styles', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css', array(), true);
     wp_enqueue_script('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array(), null, true);
-    wp_enqueue_style('aos-style', "https://unpkg.com/aos@2.3.1/dist/aos.css", array());
-    wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
-    wp_enqueue_style('glightbox-stylesheet', get_stylesheet_directory_uri() . '/css/glightbox.min.css', array(), $the_theme->get('Version'));
-    wp_enqueue_script('glightbox-scripts', get_stylesheet_directory_uri() . '/js/glightbox.min.js', array(), null, true);
+    // wp_enqueue_style('aos-style', "https://unpkg.com/aos@2.3.1/dist/aos.css", array());
+    // wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
+    wp_enqueue_style('flag-style', "https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css", array());
+    // wp_enqueue_style('glightbox-stylesheet', get_stylesheet_directory_uri() . '/css/glightbox.min.css', array(), $the_theme->get('Version'));
+    // wp_enqueue_script('glightbox-scripts', get_stylesheet_directory_uri() . '/js/glightbox.min.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'cb_theme_enqueue');
 

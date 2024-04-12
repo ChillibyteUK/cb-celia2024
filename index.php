@@ -13,8 +13,8 @@ $tag_slug = filter_input(INPUT_POST, 'tag', FILTER_UNSAFE_RAW) ?? null;
 $date_from = filter_input(INPUT_POST, 'dateFrom', FILTER_UNSAFE_RAW) ?? null;
 $date_to = filter_input(INPUT_POST, 'dateTo', FILTER_UNSAFE_RAW) ?? null;
 
+// <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
 ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
 <main id="main">
     <section class="hero" style="background-image:url(<?=$bg?>)">
         <div class="overlay"></div>
