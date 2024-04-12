@@ -22,7 +22,8 @@ add_shortcode('contact_address', function () {
 });
 
 add_shortcode('contact_phone', 'contact_phone');
-function contact_phone() {
+function contact_phone()
+{
     if (get_field('contact_phone', 'options')) {
         return '<a href="tel:' . parse_phone(get_field('contact_phone', 'options')) . '">' . get_field('contact_phone', 'options') . '</a>';
     }
@@ -31,7 +32,8 @@ function contact_phone() {
 
 add_shortcode('contact_email', 'contact_email');
 
-function contact_email() {
+function contact_email()
+{
     if (get_field('contact_email', 'options')) {
         return '<a href="mailto:' . get_field('contact_email', 'options') . '">' . get_field('contact_email', 'options') . '</a>';
     }

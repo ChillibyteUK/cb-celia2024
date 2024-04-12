@@ -110,7 +110,7 @@ do_action('wp_body_open');
                     <a href="#contact-us" class="btn btn-prenav">Contact us <span></span></a>
                 </div>
             </div>
-            <nav id="navbar" class="navbar navbar-expand-md" aria-labelledby="main-nav-label">
+            <nav id="navbar" class="navbar navbar-expand-lg" aria-labelledby="main-nav-label">
                 <div class="container-xl">
                     <button class="navbar-toggler input-button" id="navToggle" data-bs-toggle="collapse"
                         data-bs-target=".navbars" type="button" aria-label="Navigation"><i
@@ -121,13 +121,16 @@ wp_nav_menu(
                                 'theme_location'  => 'primary_nav',
                                 'container_class' => 'collapse navbar-collapse navbars',
                                 'container_id'    => 'primaryNav',
-                                'menu_class'      => 'navbar-nav w-100 justify-content-between align-items-center',
+                                'menu_class'      => 'navbar-nav w-100 gap-4',
                                 'fallback_cb'     => '',
                                 'menu_id'         => 'main-menu',
                                 'depth'           => 2,
                                 'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
                             )
 );
+?>
+                    <?php
+                        echo do_shortcode('[social_icons]');
 ?>
                 </div>
             </nav>

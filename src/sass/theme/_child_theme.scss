@@ -89,16 +89,16 @@ a {
 .social_icons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    flex-wrap: wrap;
     a {
-        color: var(--col-white);
+        color: var(--col-blue-400);
         width: 40px;
         height: 40px;
         display: grid;
         place-content: center;
         transition: color var(--transition);
         &:hover {
-            color: var(--col-light);
+            color: var(--col-blue-900);
         }
     }
 }

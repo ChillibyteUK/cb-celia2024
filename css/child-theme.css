@@ -19256,9 +19256,9 @@ readers do not read off random characters that represent icons */
 }
 
 /*!
- * Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Copyright 2022 Fonticons, Inc.
+ * Copyright 2024 Fonticons, Inc.
  */
 :root, :host {
   --fa-style-family-brands: "Font Awesome 6 Brands";
@@ -22270,10 +22270,10 @@ a {
 .social_icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  flex-wrap: wrap;
 }
 .social_icons a {
-  color: var(--col-white);
+  color: var(--col-blue-400);
   width: 40px;
   height: 40px;
   display: grid;
@@ -22281,7 +22281,7 @@ a {
   transition: color var(--transition);
 }
 .social_icons a:hover {
-  color: var(--col-light);
+  color: var(--col-blue-900);
 }
 
 /*
