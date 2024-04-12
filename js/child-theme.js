@@ -6745,7 +6745,8 @@
 
 	// Add your custom JS here.
 
-	GLightbox();
+	// const lightbox = GLightbox();
+
 	document.addEventListener('DOMContentLoaded', function () {
 	  //   const navLinks = document.querySelectorAll('.nav-link');
 	  //   const navbarCollapse = document.querySelector('.navbar-collapse');

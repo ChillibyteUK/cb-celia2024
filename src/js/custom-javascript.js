@@ -1,6 +1,6 @@
 // Add your custom JS here.
 
-const lightbox = GLightbox();
+// const lightbox = GLightbox();
 
 document.addEventListener('DOMContentLoaded', function() {
 //   const navLinks = document.querySelectorAll('.nav-link');
