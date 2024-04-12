@@ -15,6 +15,19 @@
         flex-direction: column;
         justify-content: flex-end;
         isolation: isolate;
+
+        min-height: 220px;
+
+        .arrow {
+            width: 100px;
+            height: 76px;
+            background: url(../img/arrow-white.png) rgb(255 255 255 / 24%);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: 1rem;
+        }
+        
         &:hover {
             color: var(--col-white);
             &::before {
@@ -43,5 +56,6 @@
             border-bottom: 2px solid var(--col-white);
             bottom: 1rem;
         }
+
     }
 }

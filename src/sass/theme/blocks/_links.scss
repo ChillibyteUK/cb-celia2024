@@ -1,4 +1,25 @@
 .links_index {
     &__link {
+        font-size: var(--fs-600);
+        font-weight: var(--fw-600);
+        color: var(--col-blue-400);
+        span {
+            display: inline-block;
+            aspect-ratio: 4 / 3;
+            text-align: center;
+            width: 35px;
+            margin-right: 0.25rem;
+            &.fi {
+                border: 1px solid var(--col-grey-200);
+            }
+        }
+        &:hover {
+            color: var(--col-blue-900);
+        }
+    }
+}
+.useful_links {
+    &__row {
+        border-bottom: 1px solid var(--col-grey-300);
     }
 }

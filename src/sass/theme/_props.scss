@@ -10,13 +10,15 @@ $col-grey: #FFF0F0;
     --col-black: #000000;
     --col-light: #f2f2f2;
     --col-grey-200: #eeeeee;
+    --col-grey-300: #dddddd;
     --col-grey-400: #666666;
     --col-grey-900: #222222;
 
     --col-blue-900: #323b77;
     --hsl-blue-400: 216 59% 42%;
     --col-blue-400: hsl( var(--hsl-blue-400) ); //#2c5eab;
-    --col-blue-200: #5b9ada;
+    --hsl-blue-200: 210 63% 61%; // #5b9ada;
+    --col-blue-200: hsl( var(--hsl-blue-200));
 
     // --col-green-400: #00e2c5;
     --col-green-400: hsl(172, 100%, 44%);

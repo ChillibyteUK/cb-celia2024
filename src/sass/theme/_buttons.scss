@@ -11,15 +11,88 @@
     transition: color var(--transition), background-color var(--transition);
 }
 
-// .btn-primary {
-//     background-color: var(--col-red-600);
-//     border-color: var(--col-red-600);
-//     color: var(--col-white);
-//     &:hover {
-//         background-color: var(--col-red-400);
-//         color: var(--col-white);
-//     }
-// }
+.btn-primary {
+
+}
+
+.btn-cta {
+    --_span-width: 0px;
+
+    display: flex;
+    gap: 2px;
+
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    text-transform: initial;
+    font-size: var(--fs-500);
+    font-weight: var(--fw-600);
+
+    width: max-content;
+
+    span.title {
+        border: 0;
+        width: 280px;
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+        padding: 1rem 1.5rem;
+        background: rgb(255 255 255 / 46%);
+        transition: all 0.3s ease-in-out;
+    }
+    span.arrow {
+        display: none;
+    }
+    
+    &:hover {
+        span.title {
+            background-color: hsl( var(--hsl-blue-200) / 40%);
+        }
+    }
+    @media (min-width:768px) {
+        span.arrow {
+            --_span-width: 100px;
+            background-color: rgb(255 255 255 / 46%);
+            background-image: url(../img/arrow-white.png);
+            display: inline-block;
+            width: var(--_span-width);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.btn-prenav {
+    --_span-width: 0px;
+    border-color: var(--col-white);
+    border-radius: 0;
+    font-weight: var(--fw-600);
+    color: var(--col-white);
+    text-transform: inherit;
+    letter-spacing: var(--ls-900);
+    padding: 0.5rem calc(var(--_span-width) + 2rem) 0.5rem 2rem;
+    position: relative;
+    text-wrap: nowrap;
+    span {
+        display: none;
+    }
+    @media (min-width:768px) {
+        width: 240px;
+        --_span-width: 80px;
+        span {
+            background: url(../img/arrow-white.png);
+            display: inline-block;
+            height: 100%;
+            width: var(--_span-width);
+            position: absolute;
+            top: 0;
+            background-position: center;
+            background-repeat: no-repeat;
+            right: 0;
+            border-left: 1px solid var(--col-green-400);
+        }
+    }
+}
 
 .btn-green {
     background-color: var(--col-green-400);

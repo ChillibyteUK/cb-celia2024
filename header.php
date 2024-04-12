@@ -104,8 +104,10 @@ do_action('wp_body_open');
         <div id="wrapper-navbar" class="fixed-top">
             <div class="prenav">
                 <div class="container-xl d-flex justify-content-between align-items-center">
-                    <a href="/"><img src="<?=get_stylesheet_directory_uri()?>/img/celia-alliance-logo-01.png" alt="Home"></a>
-                    <a href="#contact-us" class="btn btn-prenav">Contact us</a>
+                    <a href="/"><img
+                            src="<?=get_stylesheet_directory_uri()?>/img/celia-alliance-logo-01.png"
+                            alt="Home"></a>
+                    <a href="#contact-us" class="btn btn-prenav">Contact us <span></span></a>
                 </div>
             </div>
             <nav id="navbar" class="navbar navbar-expand-md" aria-labelledby="main-nav-label">
