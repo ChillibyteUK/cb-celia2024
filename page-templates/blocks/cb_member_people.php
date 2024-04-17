@@ -30,6 +30,16 @@ while(have_rows('people')) {
                 <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-paper-plane text-green-400"></i></span> <a href="mailto:<?=get_sub_field('email')?>"><?=get_sub_field('email')?></a></li>
                 <?php
             }
+            if (get_sub_field('linkedin') ?? null) {
+                ?>
+                <li class="mb-2"><span class="fa-li"><i class="fa-brands fa-linkedin-in text-green-400"></i></span> <a href="<?=get_sub_field('linkedin')?>" target="_blank"><?=get_sub_field('linkedin')?></a></li>
+                <?php
+            }
+            if (get_sub_field('twitter') ?? null) {
+                ?>
+                <li class="mb-2"><span class="fa-li"><i class="fa-brands fa-x-twitter text-green-400"></i></span> <a href="<?=get_sub_field('twitter')?>" target="_blank"><?=get_sub_field('twitter')?></a></li>
+                <?php
+            }
             ?>
         </div>
         <div class="col-md-3">

@@ -36,22 +36,34 @@ $countries = get_the_terms(get_the_ID(), 'location');
                 <div class="col-lg-4 order-1 order-lg-2 left-line">
                     <img class="mb-4 d-block mx-auto mx-lg-0" src="<?=get_the_post_thumbnail_url(get_the_ID(),'large')?>" alt="<?=get_the_title()?>">
                     <div class="row">
-                        <div class="col-sm-6 col-lg-12 mb-2">
+                        <div class="col-sm-6 col-lg-12 mb-3">
                             <h3 class="fs-400 mb-0"><?=get_the_title()?></h3>
                             <div><?=get_field('address')?></div>
                         </div>
                         <div class="col-sm-6 col-lg-12">
                             <ul class="fa-ul ms-4">
-                                <li><span class="fa-li"><i class="fa-solid fa-paper-plane text-green-400"></i></span> <a href="mailto:<?=get_field('email')?>"><?=get_field('email')?></a></li>
-                                <li><span class="fa-li"><i class="fa-solid fa-phone text-green-400"></i></span> <a href="tel:<?=get_field('phone')?>"><?=get_field('phone')?></a></li>
+                                <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-paper-plane text-green-400"></i></span> <a href="mailto:<?=get_field('email')?>"><?=get_field('email')?></a></li>
+                                <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-phone text-green-400"></i></span> <a href="tel:<?=get_field('phone')?>"><?=get_field('phone')?></a></li>
                                 <?php
                                 if (get_field('fax') ?? null) {
                                     ?>
-                                <li><span class="fa-li"><i class="fa-solid fa-fax text-green-400"></i></span> <?=get_field('fax')?></li>
+                                <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-fax text-green-400"></i></span> <?=get_field('fax')?></li>
                                     <?php
                                 }
                                 ?>
-                                <li><span class="fa-li"><i class="fa-solid fa-laptop text-green-400"></i></span> <a href="<?=get_field('website')?>" target="_blank"><?=get_field('website')?></a></li>
+                                <li class="mb-2"><span class="fa-li"><i class="fa-solid fa-laptop text-green-400"></i></span> <a href="<?=get_field('website')?>" target="_blank"><?=get_field('website')?></a></li>
+                                <?php
+                                if (get_field('linkedin') ?? null) {
+                                    ?>
+                                <li class="mb-2"><span class="fa-li"><i class="fa-brands fa-linkedin-in text-green-400"></i></span> <a href="<?=get_field('linkedin')?>"><?=get_field('linkedin')?></a></li>
+                                    <?php
+                                }
+                                if (get_field('twitter') ?? null) {
+                                    ?>
+                                <li class="mb-2"><span class="fa-li"><i class="fa-brands fa-x-twitter text-green-400"></i></span> <a href="<?=get_field('twitter')?>"><?=get_field('twitter')?></a></li>
+                                    <?php
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>

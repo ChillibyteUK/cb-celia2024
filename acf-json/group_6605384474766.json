@@ -152,6 +152,42 @@
                     "parent_repeater": "field_660538a42e929"
                 },
                 {
+                    "key": "field_661ff03766aff",
+                    "label": "Twitter",
+                    "name": "twitter",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_660538a42e929"
+                },
+                {
+                    "key": "field_661ff02566afe",
+                    "label": "LinkedIn",
+                    "name": "linkedin",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_660538a42e929"
+                },
+                {
                     "key": "field_6605391a2e92e",
                     "label": "Principal Address",
                     "name": "principal_address",
@@ -214,5 +250,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712759769
+    "modified": 1713369159
 }
