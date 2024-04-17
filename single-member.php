@@ -36,7 +36,7 @@ $countries = get_the_terms(get_the_ID(), 'location');
                 <div class="col-lg-4 order-1 order-lg-2 left-line">
                     <img class="mb-4 d-block mx-auto mx-lg-0" src="<?=get_the_post_thumbnail_url(get_the_ID(),'large')?>" alt="<?=get_the_title()?>">
                     <div class="row">
-                        <div class="col-sm-6 col-lg-12">
+                        <div class="col-sm-6 col-lg-12 mb-2">
                             <h3 class="fs-400 mb-0"><?=get_the_title()?></h3>
                             <div><?=get_field('address')?></div>
                         </div>
