@@ -1,6 +1,6 @@
 <?php
 $e = get_field('hs_form');
-$class = $block['className'] ?: 'py-5';
+$class = $block['className'] ?? 'py-5';
 ?>
 <section class="text_hs <?=$class?>">
     <div class="container-xl">
