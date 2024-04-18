@@ -1,7 +1,8 @@
 <?php
 $e = get_field('hs_form');
+$class = $block['className'] ?: 'py-5';
 ?>
-<section class="text_hs py-5">
+<section class="text_hs <?=$class?>">
     <div class="container-xl">
         <div class="row">
             <div class="col-md-6">
