@@ -22082,9 +22082,7 @@ body footer .gform_wrapper .gform_footer button {
 
 .hero_full {
   height: 600px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   display: grid;
   place-content: center;
 }
@@ -22093,6 +22091,16 @@ body footer .gform_wrapper .gform_footer button {
 }
 .hero_full__subtitle {
   margin-top: 3rem;
+}
+.hero_full__bg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  z-index: -1;
 }
 
 .services_nav__list {
