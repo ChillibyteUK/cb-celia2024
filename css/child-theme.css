@@ -22060,9 +22060,6 @@ body footer .gform_wrapper .gform_footer button {
 
 .hero {
   min-height: 380px;
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
   position: relative;
   isolation: isolate;
   display: flex;
@@ -22072,12 +22069,22 @@ body footer .gform_wrapper .gform_footer button {
 .hero h1, .hero .h1 {
   font-size: var(--fs-900);
 }
-.hero::before {
+.hero::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background-image: linear-gradient(90deg, var(--col-blue-400) 0%, hsl(var(--hsl-blue-400)/0.4) 100%);
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  z-index: -1;
 }
 
 .hero_full {

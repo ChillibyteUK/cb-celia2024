@@ -1,8 +1,8 @@
 .hero {
     min-height: 380px;
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: top center;
+    // background-repeat: no-repeat;
     position: relative;
     isolation: isolate;
     display: flex;
@@ -11,12 +11,20 @@
     h1 {
         font-size: var(--fs-900);
     }
-    &::before {
+    &::after {
         content: "";
         position: absolute;
         inset: 0;
         z-index: -1;
         background-image: linear-gradient(90deg, var(--col-blue-400) 0%, hsl( var(--hsl-blue-400) / 0.4 ) 100%);
+    }
+    &__bg {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        z-index: -1;
     }
 }
 
