@@ -5,7 +5,6 @@ $link = get_field('cta') ?? null;
 $img = wp_get_attachment_image(get_field('background'),'full',false, array('class' => 'hero_full__bg')) ?? null;
 
 ?>
-<!-- <link rel="preload" href="<?=$img?>" as="image"> -->
 <section class="hero_full">
     <?=$img?>
     <div class="hero_full__content container-xl text-center">

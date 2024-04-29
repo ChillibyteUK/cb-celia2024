@@ -2,7 +2,6 @@
 // $img = wp_get_attachment_image_url(get_field('background'), 'full') ?? null;
 $img = wp_get_attachment_image(get_field('background'),'full',false, array('class' => 'hero__bg')) ?? null;
 ?>
-<!-- <link rel="preload" href="<?=$img?>" as="image"> -->
 <section class="hero">
     <?=$img?>
     <div class="container-xl">
