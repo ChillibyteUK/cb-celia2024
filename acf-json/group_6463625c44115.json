@@ -141,8 +141,8 @@
         },
         {
             "key": "field_646cbd26afcab",
-            "label": "Google Analytics",
-            "name": "ga_property",
+            "label": "Google Tag Manager",
+            "name": "gtm_property",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -276,5 +276,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711635581
+    "modified": 1714483386
 }
