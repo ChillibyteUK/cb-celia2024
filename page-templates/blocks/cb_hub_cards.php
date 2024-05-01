@@ -16,11 +16,12 @@
                 class="hub_cards__card bg-<?=$bg?> <?=$width?>">
                 <img src="<?=wp_get_attachment_image_url(get_sub_field('image'), 'large')?>"
                     alt="">
-                <div>
-                    <h2 class="text-grey-900">
-                        <?=get_sub_field('title')?>
-                    </h2>
-                    <?php
+                <div class="hub_cards__inner">
+                    <div>
+                        <h2 class="text-grey-900">
+                            <?=get_sub_field('title')?>
+                        </h2>
+                        <?php
         if (get_sub_field('flags') ?? null) {
             echo '<div class="pb-2">';
             foreach (get_sub_field('flags') as $f) {
@@ -30,7 +31,8 @@
             echo '</div>';
         }
             ?>
-                    <?=get_sub_field('content')?>
+                        <?=get_sub_field('content')?>
+                    </div>
                     <a href="<?=$l['url']?>"
                         class="btn btn-black"
                         target="<?=$l['target']?>"><?=$l['title']?></a>

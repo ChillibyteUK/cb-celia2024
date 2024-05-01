@@ -22302,6 +22302,13 @@ body footer .gform_wrapper .gform_footer button {
   object-position: center;
   margin-bottom: 1rem;
 }
+.hub_cards__inner {
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.hub_cards__inner a {
+  justify-self: start;
+}
 @media (min-width: 992px) {
   .hub_cards .span-2 {
     gap: 1rem;

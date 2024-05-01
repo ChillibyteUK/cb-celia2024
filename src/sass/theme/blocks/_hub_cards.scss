@@ -17,6 +17,13 @@
             margin-bottom: 1rem;
         }
     }
+    &__inner {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        a {
+            justify-self: start;
+        }
+    }
     .span-2 {
         @media (min-width:992px) {
             gap: 1rem;
