@@ -115,6 +115,27 @@
                     "parent_repeater": "field_6617a901f7ef3"
                 },
                 {
+                    "key": "field_6632560b5f543",
+                    "label": "Image Overlay Title",
+                    "name": "image_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6617a901f7ef3"
+                },
+                {
                     "key": "field_6617a96ef7ef8",
                     "label": "Title",
                     "name": "title",
@@ -220,5 +241,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712830662
+    "modified": 1714574872
 }

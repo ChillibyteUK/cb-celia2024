@@ -14,8 +14,17 @@
             ?>
             <div
                 class="hub_cards__card bg-<?=$bg?> <?=$width?>">
-                <img src="<?=wp_get_attachment_image_url(get_sub_field('image'), 'large')?>"
-                    alt="">
+                <div class="hub_cards__image_container">
+                    <img src="<?=wp_get_attachment_image_url(get_sub_field('image'), 'large')?>"
+                        alt="">
+                    <?php
+                    if (get_sub_field('image_title') ?? null) {
+                        ?>
+                    <div class="image_caption"><?=get_sub_field('image_title')?></div>
+                        <?php
+                    }
+                    ?>
+                </div>
                 <div class="hub_cards__inner">
                     <div>
                         <h2 class="text-grey-900">

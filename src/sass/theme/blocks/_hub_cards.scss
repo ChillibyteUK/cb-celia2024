@@ -17,6 +17,23 @@
             margin-bottom: 1rem;
         }
     }
+    &__image_container {
+        position: relative;
+        .image_caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 1rem;
+            right: 1rem;
+            font-size: var(--fs-600);
+            color: var(--col-white);
+            font-weight: var(--fw-600);
+            text-shadow: 
+            -1px -1px 0 var(--col-black),  
+             1px -1px 0 var(--col-black),
+            -1px  1px 0 var(--col-black),
+             1px  1px 0 var(--col-black);
+        }
+    }
     &__inner {
         display: grid;
         grid-template-rows: 1fr auto;
