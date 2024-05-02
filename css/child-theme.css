@@ -22292,6 +22292,7 @@ body footer .gform_wrapper .gform_footer button {
 .hub_cards__card {
   padding: 1rem;
   display: grid;
+  grid-template-rows: auto 1fr;
 }
 .hub_cards__card img {
   width: 100%;
