@@ -11,9 +11,11 @@
             $width = get_sub_field('width') == '100%' ? 'span-2' : null;
             $bg = get_sub_field('background');
             $l = get_sub_field('url');
+            $anchor_id = get_sub_field('anchor_id');
             ?>
             <div
-                class="hub_cards__card bg-<?=$bg?> <?=$width?>">
+                class="hub_cards__card bg-<?=$bg?> <?=$width?>"
+                id="<?=$anchor_id?>">
                 <div class="hub_cards__image_container">
                     <img src="<?=wp_get_attachment_image_url(get_sub_field('image'), 'large')?>"
                         alt="">
