@@ -34,7 +34,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "eu1",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -99,5 +99,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721900769
+    "modified": 1721901174
 }
