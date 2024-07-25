@@ -156,6 +156,15 @@ function acf_blocks()
             'supports' => array('mode' => false, 'anchor' => true),
         ));
         acf_register_block_type(array(
+            'name'				=> 'cb_hs_form',
+            'title'				=> __('CB HS Form'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_hs_form.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false, 'anchor' => true),
+        ));
+        acf_register_block_type(array(
             'name'				=> 'cb_title_content',
             'title'				=> __('CB Title / Content'),
             'category'			=> 'layout',
