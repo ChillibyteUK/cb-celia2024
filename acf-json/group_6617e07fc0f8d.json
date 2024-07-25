@@ -142,6 +142,45 @@
                     "append": ""
                 }
             ]
+        },
+        {
+            "key": "field_66a207b990ec6",
+            "label": "Form Title",
+            "name": "form_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66a206c5e5b74",
+            "label": "Form BG",
+            "name": "form_bg",
+            "aria-label": "",
+            "type": "editor_palette",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allowed_colors": "",
+            "exclude_colors": "",
+            "return_format": "slug"
         }
     ],
     "location": [
@@ -162,5 +201,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712841050
+    "modified": 1721894850
 }
