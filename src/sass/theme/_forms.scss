@@ -117,3 +117,13 @@ body footer .gform_wrapper .gform_footer button {
 //     display: flex;
 //     justify-content: space-around;
 // }
+
+//------------------------------HUBSPOT--//
+.hs-fieldtype-text input,
+.hs-fieldtype-phonenumber input,
+.hs-fieldtype-phonenumber input,
+.hs-fieldtype-number input { width: 100%; }
+ul.multi-container { padding: 0; }
+ul.multi-container li { list-style: none; }
+ul.multi-container span { margin-left: 10px; }
+input.hs-button.primary.large { margin-top: 20px; }
