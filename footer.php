@@ -20,7 +20,9 @@ defined('ABSPATH') || exit;
     }
 }
 .footer-form fieldset.form-columns-1 .hs-input {
-    width: 100%;
+    @media (min-width:480px) {
+        width: 100%;
+    }
 }
 .footer-form .hs_area_of_enquiry {
     width: 100% !important;
