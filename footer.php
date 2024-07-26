@@ -39,6 +39,10 @@ defined('ABSPATH') || exit;
     width: 68%;
     float: left;
 }
+.footer-form fieldset:nth-of-type(5) .hs-form-field {
+    width: 100%;
+    float: none;
+}
 
 .footer-form .hs_recaptcha {
     float: right;
