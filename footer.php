@@ -36,8 +36,9 @@ defined('ABSPATH') || exit;
     }
 }
 .footer-form fieldset:nth-of-type(5) {
-    width: 68%;
+    width: 100%;
     @media (min-width:992px) {
+        width: 68%;
         float: left;
     }
 }
