@@ -16,7 +16,7 @@ defined('ABSPATH') || exit;
         float: left;
     }
 }
-.footer-form fieldset.form-columns-1 .hs-form-field .hs-input {
+.footer-form fieldset.form-columns-1 .hs-input {
     width: 100%;
 }
 .footer-form .hs_area_of_enquiry {
