@@ -6,10 +6,15 @@ defined('ABSPATH') || exit;
 <style>
 .footer-form fieldset {
     max-width: unset;
+    @media (min-width:992px) {
+        margin-bottom: 0.5rem;
+    }
 }
 .footer-form fieldset.form-columns-1 .hs-form-field {
-    width: 32.7%;
-    float: left;
+    @media (min-width:992px) {
+        width: 32.7%;
+        float: left;
+    }
 }
 .footer-form .hs_area_of_enquiry {
     width: 100% !important;
@@ -30,6 +35,18 @@ defined('ABSPATH') || exit;
         columns: 3;
     }
 }
+.footer-form fieldset:nth-of-type(5) {
+    width: 68%;
+    float: left;
+}
+
+.footer-form .hs_recaptcha {
+    float: right;
+    width: 32%;
+    padding-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
 </style>
 <div id="footer-top"></div>
 <footer>
