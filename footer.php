@@ -4,9 +4,9 @@ defined('ABSPATH') || exit;
 ?>
 </div> <!-- end page -->
 <style>
-    .footer-form fieldset {
-        max-width: unset;
-    }
+.footer-form fieldset {
+    max-width: unset;
+}
 </style>
 <div id="footer-top"></div>
 <footer>
@@ -21,7 +21,6 @@ defined('ABSPATH') || exit;
             <div class="h1 text-white">Get in touch</div>
             <div class="fs-500">Contact us today and we will get back to you as soon as possible</div>
             <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script> <script> hbspt.forms.create({ region: "eu1", portalId: "144469752", formId: "24eff68f-a766-4c34-9cbe-c990f797391f" }); </script>
-            <!-- <?=do_shortcode('[gravityform id="1" title="false"]')?> -->
         </div>
         <div class="row">
             <div class="col-lg-4">
