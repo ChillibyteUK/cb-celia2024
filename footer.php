@@ -22,7 +22,7 @@ defined('ABSPATH') || exit;
 }
 .footer-form input[type=text],
 .footer-form input[type=email],
-.footer-form textarea, {
+.footer-form textarea {
     background-color: var(--col-grey-400);
     border-color: var(--col-grey-400);
     color: var(--col-white);
