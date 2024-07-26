@@ -59,7 +59,13 @@ defined('ABSPATH') || exit;
         margin-bottom: 3rem;
     }
 }
-
+.footer-form .hs-button {
+    border: 1px solid var(--col-white);
+    border-radius: 0;
+    color: var(--col-white);
+    padding: .5rem 1.5rem;
+    background-color: transparent;
+}
 </style>
 <div id="footer-top"></div>
 <footer>
