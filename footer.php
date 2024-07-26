@@ -3,6 +3,10 @@
 defined('ABSPATH') || exit;
 ?>
 </div> <!-- end page -->
+<style>
+    .footer-form fieldset {
+        max-width: unset;
+    }
 <div id="footer-top"></div>
 <footer>
     <div class="footer container-xl pt-5 pb-4">
