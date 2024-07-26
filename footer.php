@@ -6,7 +6,7 @@ defined('ABSPATH') || exit;
 <style>
 .footer-form fieldset {
     max-width: unset;
-    @media (min-width:992px) {
+    @media (min-width:480px) {
         margin-bottom: 0.5rem;
     }
 }
@@ -32,7 +32,7 @@ defined('ABSPATH') || exit;
     padding: 8px;
 }
 .footer-form .inputs-list {
-    @media (min-width:768px) {
+    @media (min-width:576px) {
         columns: 2;
     }
     @media (min-width:992px) {
