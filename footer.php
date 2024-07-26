@@ -4,6 +4,9 @@ defined('ABSPATH') || exit;
 ?>
 </div> <!-- end page -->
 <style>
+.footer-form .hbspt-form {
+    margin-top: 1rem;
+}
 .footer-form fieldset {
     max-width: unset;
     @media (min-width:480px) {
