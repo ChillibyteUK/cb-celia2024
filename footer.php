@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
     }
 }
 .footer-form fieldset.form-columns-1 .hs-form-field {
-    @media (min-width:992px) {
+    @media (min-width:480px) {
         width: 32.7%;
         float: left;
     }
