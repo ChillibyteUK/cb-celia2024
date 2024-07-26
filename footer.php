@@ -11,6 +11,10 @@ defined('ABSPATH') || exit;
     width: 32.7%;
     float: left;
 }
+.footer-form .hs_area_of_enquiry {
+    width: 100%;
+    float: none;
+}
 .footer-form input[type=text] {
     background-color: var(--col-grey-400);
     border-color: var(--col-grey-400);
