@@ -7,6 +7,24 @@ defined('ABSPATH') || exit;
 .footer-form fieldset {
     max-width: unset;
 }
+.footer-form fieldset.form-columns-1 .hs-form-field {
+    width: 32.7%;
+    float: left;
+}
+.footer-form input[type=text] {
+    background-color: var(--col-grey-400);
+    border-color: var(--col-grey-400);
+    color: var(--col-white);
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 8px;
+}
+.footer-form .inputs-list {
+    @media (min-width:992px) {
+        columns: 3;
+    }
+}
 </style>
 <div id="footer-top"></div>
 <footer>
