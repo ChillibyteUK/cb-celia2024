@@ -21,7 +21,8 @@ defined('ABSPATH') || exit;
     float: none !important;
 }
 .footer-form input[type=text],
-.footer-form input[type=email] {
+.footer-form input[type=email],
+.footer-form textarea, {
     background-color: var(--col-grey-400);
     border-color: var(--col-grey-400);
     color: var(--col-white);
@@ -31,6 +32,9 @@ defined('ABSPATH') || exit;
     padding: 8px;
 }
 .footer-form .inputs-list {
+    @media (min-width:768px) {
+        columns: 2;
+    }
     @media (min-width:992px) {
         columns: 3;
     }
