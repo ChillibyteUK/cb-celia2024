@@ -45,10 +45,12 @@ defined('ABSPATH') || exit;
 }
 
 .footer-form .hs_recaptcha {
-    float: right;
-    width: 32%;
-    padding-top: 1.5rem;
-    margin-bottom: 3rem;
+    @media (min-width:992px) {
+        float: right;
+        width: 32%;
+        padding-top: 1.5rem;
+        margin-bottom: 3rem;
+    }
 }
 
 </style>
