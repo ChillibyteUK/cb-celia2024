@@ -7,6 +7,7 @@ defined('ABSPATH') || exit;
     .footer-form fieldset {
         max-width: unset;
     }
+</style>
 <div id="footer-top"></div>
 <footer>
     <div class="footer container-xl pt-5 pb-4">
