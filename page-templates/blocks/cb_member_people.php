@@ -9,7 +9,7 @@ while(have_rows('people')) {
             <?php
             $img = wp_get_attachment_image_url(get_sub_field('image'),'large') ?: get_stylesheet_directory_uri() . '/img/missing-person.jpg';
             ?>
-            <img src="<?=$img?>" alt="<?=get_sub_field('name')?>">
+            <img src="<?=$img?>" class="people__image" alt="<?=get_sub_field('name')?>">
         </div>
         <div class="col-md-4">
             <div class="fw-bold mb-2"><?=get_sub_field('name')?></div>

@@ -22246,6 +22246,15 @@ input.hs-button.primary.large {
   z-index: -1;
 }
 
+.people__image {
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  width: 120px;
+}
+
 .testimonials__quote {
   position: relative;
 }
