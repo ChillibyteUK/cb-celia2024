@@ -15,7 +15,7 @@
             ?> 
             <div class="hub_cards__card bg-<?=$bg?> <?=$width?>">
                 <?php
-                if (get_sub_field('id') ?? null;) {
+                if (get_sub_field('id') ?? null) {
                     ?>
                 <a class="anchor" name="<?=$id?>"></a>
                     <?php
