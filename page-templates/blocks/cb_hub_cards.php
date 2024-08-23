@@ -11,7 +11,7 @@
             $width = get_sub_field('width') == '100%' ? 'span-2' : null;
             $bg = get_sub_field('background');
             $l = get_sub_field('url');
-            $anchor_id = get_sub_field('id') ?? null;
+            $id = get_sub_field('id') ?? null;
             ?> 
             <div class="hub_cards__card bg-<?=$bg?> <?=$width?>" id="<?=$id?>">
                 <div class="hub_cards__image_container">
