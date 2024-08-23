@@ -14,6 +14,7 @@
             $id = get_sub_field('id') ?? null;
             ?> 
             <div class="hub_cards__card bg-<?=$bg?> <?=$width?>">
+                <a class="hub_cards__anchor" id="<?=$id?>"></a>
                 <div class="hub_cards__image_container">
                     <img src="<?=wp_get_attachment_image_url(get_sub_field('image'), 'large')?>"
                         alt="">

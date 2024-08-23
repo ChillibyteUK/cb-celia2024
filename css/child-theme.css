@@ -22325,6 +22325,14 @@ input.hs-button.primary.large {
   padding: 1rem;
   display: grid;
   grid-template-rows: auto 1fr;
+  position: relative;
+}
+.hub_cards__card .hub_cards__anchor {
+  position: absolute;
+  top: -80px;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
 }
 .hub_cards__card img {
   width: 100%;
