@@ -112,7 +112,8 @@ do_action('wp_body_open');
             <div class="prenav">
                 <div class="container-xl d-flex justify-content-between align-items-center">
                     <a href="/"><img
-                            src="<?=get_stylesheet_directory_uri()?>/img/celia-alliance-logo-01.png"
+                            src="<?=get_stylesheet_directory_uri()?>/img/CELIA_Full_DarkBackground.svg"
+                            width=280 height=68
                             alt="Home"></a>
                     <a href="#contact-us" class="btn btn-prenav">Contact us <span></span></a>
                 </div>

@@ -91,8 +91,11 @@ defined('ABSPATH') || exit;
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <img src="<?=get_stylesheet_directory_uri()?>/img/celia-alliance-logo-01.png"
-                    class="footer__logo" alt="CELIA Alliance">
+                <img
+                    src="<?=get_stylesheet_directory_uri()?>/img/CELIA_Full_DarkBackground.svg"
+                    width=350 height=85
+                    alt="Home"
+                    class="footer__logo">
             </div>
             <div class="col-lg-4">
                 <?=get_field('contact_address','options')?>
