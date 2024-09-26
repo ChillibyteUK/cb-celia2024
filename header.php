@@ -114,7 +114,8 @@ do_action('wp_body_open');
                     <a href="/"><img
                             src="<?=get_stylesheet_directory_uri()?>/img/CELIA_Full_DarkBackground.svg"
                             width="280" height="68"
-                            alt="Celia Alliance Home"></a>
+                            alt="Celia Alliance"
+                            title="Home"></a>
                     <a href="#contact-us" class="btn btn-prenav">Contact us <span></span></a>
                 </div>
             </div>
